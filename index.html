@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="A personal interactive digital experience created especially for Nancy (Sinnu).">
+  <title>For Nancy (Sinnu) ✨ | A Special Message</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Orbs -->
+  <div class="ambient-orbs-container" aria-hidden="true">
+    <div class="ambient-orb orb-pink"></div>
+    <div class="ambient-orb orb-purple"></div>
+    <div class="ambient-orb orb-cyan"></div>
+    <div class="ambient-orb orb-gold"></div>
+  </div>
+
+  <!-- Ambient Particle Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <!-- Music Control Button -->
+  <button id="musicToggleBtn" class="music-control-btn" aria-label="Toggle ambient music" title="Toggle background music">
+    <div class="music-waves">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <!-- Main Container Wrapper -->
+  <main>
+    
+    <!-- Section 1 — Opening Screen -->
+    <section id="sectionHero" class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-badge reveal">
+          <span class="heart-icon">💖</span> Made specially for Nancy (Sinnu)
+        </div>
+        <span id="heroSmallText" class="hero-greeting">Hey Nancy (Sinnu)… ✨</span>
+        <h1 id="heroHeading" class="hero-title">Nancy (Sinnu), I know I messed up.</h1>
+        <p id="heroSubtext" class="hero-subtext">
+          I could have just sent you a simple text message, Sinnu.<br>
+          But you deserve something genuine, creative, and built with care.
+        </p>
+        <a href="#sectionReason" id="heroBtn" class="primary-btn">
+          <span id="heroBtnText">Give me a minute, Sinnu →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 2 — The Reason -->
+    <section id="sectionReason" class="reason-section container">
+      <div class="reveal">
+        <div class="section-label">Perspective</div>
+        <h2 id="reasonHeading" class="section-title">So… I made this.</h2>
+        <div id="reasonTextContainer" class="glass-card reason-card">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Nancy's Favorite Things (Sunflowers, Chocolates & Kinder Joy) -->
+    <section id="sectionFavorites" class="favorites-section container">
+      <div class="reveal">
+        <div class="section-label">Especially For Sinnu</div>
+        <h2 class="section-title">A Few Of Sinnu's Favorites 🌻🍫</h2>
+        <p style="margin-bottom: 28px; text-align: center;">Because no apology is complete without your favorite treats!</p>
+        
+        <div class="favorites-grid">
+          <!-- Sunflower Card -->
+          <div class="glass-card favorite-card favorite-sunflower">
+            <div class="favorite-icon-wrapper">
+              <span class="favorite-animated-icon spinning-sunflower">🌻</span>
+            </div>
+            <h3 class="favorite-title">Sunflowers</h3>
+            <p class="favorite-desc">Bright, warm & full of sunshine — just like your energy, Sinnu!</p>
+            <div class="favorite-tag tag-sunflower">Bright & Sunny ☀️</div>
+          </div>
+
+          <!-- Chocolate Card -->
+          <div class="glass-card favorite-card favorite-chocolate">
+            <div class="favorite-icon-wrapper">
+              <span class="favorite-animated-icon bouncing-chocolate">🍫</span>
+            </div>
+            <h3 class="favorite-title">Chocolates</h3>
+            <p class="favorite-desc">A extra touch of sweetness to brighten up your day!</p>
+            <div class="favorite-tag tag-chocolate">Sweetest Treats 🍬</div>
+          </div>
+
+          <!-- Kinder Joy Card -->
+          <div class="glass-card favorite-card favorite-kinderjoy" id="kinderJoyCard">
+            <div class="favorite-icon-wrapper">
+              <span class="favorite-animated-icon pulsing-kinderjoy">🥚</span>
+            </div>
+            <h3 class="favorite-title">Kinder Joy</h3>
+            <p class="favorite-desc">Tap to unwrap your special Kinder Joy surprise gift! 🎁</p>
+            <button class="kinderjoy-open-btn" id="openKinderJoyBtn">Unwrap Surprise ✨</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 — Photo Experience -->
+    <section id="sectionPhotos" class="photo-section container">
+      <div class="reveal">
+        <div class="section-label">Gallery</div>
+        <h2 class="section-title">Moments That Matter</h2>
+        <p style="margin-bottom: 16px;">Swipe or tap any photo to view in detail.</p>
+        
+        <div class="photo-gallery-wrapper">
+          <div id="photoCarousel" class="photo-carousel">
+            <!-- Populated by JS -->
+          </div>
+          <div id="carouselDots" class="carousel-indicators">
+            <!-- Dots populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 — What I Understand -->
+    <section id="sectionUnderstand" class="understand-section container">
+      <div class="reveal">
+        <div class="section-label">Reflection</div>
+        <h2 class="section-title">What I Understand</h2>
+        <p>Tap a card to expand my thoughts.</p>
+        
+        <div id="understandCardsContainer" class="understand-cards-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5 — A Small Timeline -->
+    <section id="sectionTimeline" class="timeline-section container">
+      <div class="reveal">
+        <div class="section-label">Realizations</div>
+        <h2 id="timelineHeading" class="section-title">Things I Probably Should Have Realized Earlier.</h2>
+        
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+          <div id="timelineContainer">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6 — THE APOLOGY -->
+    <section id="sectionApology" class="apology-section container">
+      <div class="apology-container reveal">
+        <h2 id="apologyHeading" class="apology-heading gold-text">I’m genuinely sorry.</h2>
+        <div class="glowing-divider"></div>
+        <p id="apologySubtext" class="apology-text">
+          I don't expect you to forget everything immediately.<br>
+          And I don't expect an instant reply.<br><br>
+          I just wanted you to know that I realize my mistake.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 7 — THE FINAL MESSAGE -->
+    <section id="sectionFinal" class="final-message-section container">
+      <div class="glass-card typing-card reveal" style="width: 100%;">
+        <div>
+          <div class="section-label">Final Thought</div>
+          <h2 id="finalHeading" class="section-title" style="margin-bottom: 20px;">One last thing…</h2>
+          <div id="typingContainer" class="typing-container">
+            <!-- Typing effect dynamically rendered by JS -->
+          </div>
+        </div>
+        
+        <div class="signature-wrapper">
+          <span id="signatureText" class="signature-text">
+            — From the guy who probably should have coded this sooner.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8 — Final Interaction -->
+    <section id="sectionInteraction" class="interaction-section container">
+      <div class="glass-card interaction-card reveal">
+        <h2 id="interactionQuestion" class="interaction-question">What do you want to do?</h2>
+        
+        <div class="interaction-buttons">
+          <button id="btnNeedTime" class="choice-btn choice-btn-secondary">
+            I need some time 😒
+          </button>
+          <button id="btnWeAreGood" class="choice-btn choice-btn-primary">
+            Okay, we're good ❤️
+          </button>
+        </div>
+
+        <div id="resultCard" class="result-card">
+          <p id="resultText" class="result-text"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close modal">&times;</button>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Expanded photo view">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- Kinder Joy Surprise Modal -->
+  <div id="kinderJoyModal" class="kinderjoy-modal" role="dialog" aria-modal="true">
+    <div class="kinderjoy-modal-content glass-card">
+      <button id="kinderJoyClose" class="kinderjoy-close" aria-label="Close modal">&times;</button>
+      <div class="kinderjoy-egg-badge">
+        <span class="egg-icon">🥚✨</span>
+      </div>
+      <h2 class="kinderjoy-title">Sinnu's Kinder Joy Surprise! 🎉</h2>
+      <p class="kinderjoy-message">
+        Sinnu, you are the brightest sunflower 🌻 & the sweetest friend ever! <br>
+        Here's a special virtual Kinder Joy filled with endless smiles, chocolates & happiness! 🎁🍫✨
+      </p>
+      <div class="kinderjoy-floating-treats">
+        <span>🌻</span> <span>🍫</span> <span>🥚</span> <span>💖</span> <span>✨</span> <span>🌻</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Easter Egg Toast Notification -->
+  <div id="easterEggToast" class="easter-egg-toast"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Crafted with sincerity & care.</p>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
